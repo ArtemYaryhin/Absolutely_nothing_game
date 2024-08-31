@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2c2f48; /* Темно-синий фон */
+    background-image: url('../images/bg.png'); /* Фоновое изображение */
+    background-size: cover; /* Обрезать изображение по размеру экрана */
+    background-position: center; /* Центрировать изображение */
+    background-repeat: no-repeat;
+    overflow: hidden; /* Отключить прокрутку */
+    color: white;
+}
+
+#score {
+    font-size: 72px;
+    margin: 20px 0;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 80px); /* Учитывая высоту score и отступов */
+    position: relative;
+    overflow: hidden; /* Отключить прокрутку */
+}
+
+#coin {
+    width: 400px;
+    height: 400px;
+    background-image: url('../images/Honey_coin.png');
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s ease; /* Анимация уменьшения */
+}
+
+#energy-bar-container {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    height: 30px;
+    background-color: #8A7319; /* Цвет полоски */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#energy-bar {
+    height: 100%;
+    width: 100%;
+    background-color: white; /* Цвет заполнения */
+    transform-origin: left; /* Устанавливает точку начала заполнения */
+    transform: scaleX(1); /* Полностью заполнена */
+}
+
+#energy-counter {
+    position: absolute;
+    bottom: 60px; /* Над полоской энергии */
+    font-size: 42px;
+    color: white;
+}
+
+.points {
+    position: absolute;
+    font-size: 46px;
+    color: yellow;
+    animation: rise 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rise {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
